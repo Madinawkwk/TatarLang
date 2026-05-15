@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{% block title %}Базовый заголовок{% endblock %}</title>
+</head>
+<body>
+    <div style="text-align: center"></div>
+    <h1>{% block content %} 
+    {% endblock %}</h1>
+    </div>
+    <h3>Татарча</h3>
+    <p>{% block content1 %} 
+    {% endblock %}</p>
+    <h3>Русча</h3>
+    <p>{% block content2 %} 
+    {% endblock %}</p>
+    
+            <audio controls>{% block audio %} {% endblock %}</audio>
+
+            <h3>Скачать аудио:</h3>
+
+            <p>{% block download %} {% endblock %}</p>
+    <li><a href="{{url_for('main_page')}}">Артка</a></li>
+</body>
+</html>
