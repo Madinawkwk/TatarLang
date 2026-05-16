@@ -1,39 +1,16 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>First Lesson</title>
-</head>
-<body>
-    <div style="text-align: center">
-    <h1>Беренче дәрес</h1>
-    </div>
-    <h3>Татарча</h3>
-
-    <p>
-        Сабантуй – Татарстанда иң зур бәйрәм.
+{% extends 'base.html' %}
+{% block title %} First Lesson {% endblock %}
+{% block content %} Беренче дәрес {% endblock %}
+{% block content1 %} Сабантуй – Татарстанда иң зур бәйрәм.
         Сабантуй бик матур урында була. Ул июньдә
         үтә. Сабантуйда бөтен кеше бәйрәмчә киенә. Бар
         кеше дә шат. Сабантуйда төрле кызык уеннар
-        була: ат чабышы, чүлмәк вату, баганага менү.</p>
-
-    <h3>Русча</h3>
-
-    <p> Сабантуй самый больший праздник в Татарстане . 
+        була: ат чабышы, чүлмәк вату, баганага менү. {% endblock %}
+{% block content2 %} Сабантуй самый больший праздник в Татарстане . 
         Сабантуй бывает в самом красивом месте. Он проходит в июне. 
         Все люди празднично одеваются на Сабантуй. Все люди счастливы. 
         На Сабантуе бывают разные интересные игры: скачки, разбивание горшка, 
-        лазание на столб. </p>
-
-        <audio controls>
-        <source src="{{ url_for('static', filename='vasilja-fattakhova-tugan-jak.mp3') }}" type="audio/mpeg">
-        В вашем браузере не проигрывается данное аудио
-    </audio>
-
-    <h3>Скачать аудио:</h3>
-    <p><a href="{{ url_for('static', filename='vasilja-fattakhova-tugan-jak.mp3') }}" download>Скачать Василя Фаттахова - Туган як</a></p>
-
-    <li><a href="{{url_for('main_page')}}">Артка</a></li>
-</body>
-</html>
+        лазание на столб. {% endblock %}
+{% block audio %} <source src="{{ url_for('static', filename='vasilja-fattakhova-tugan-jak.mp3') }}" type="audio/mpeg">
+        В вашем браузере не проигрывается данное аудио {% endblock %}
+{% block download %} <a href="{{ url_for('static', filename='vasilja-fattakhova-tugan-jak.mp3') }}" download>Скачать Василя Фаттахова - Туган як</a> {% endblock %}
