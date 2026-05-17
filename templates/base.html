@@ -1,25 +1,53 @@
 <!DOCTYPE html>
 <html>
 <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
     <title>{% block title %}Базовый заголовок{% endblock %}</title>
+    <style>
+        :root {
+            --min-font: 18px;
+            --max-font: 26px;
+        }
+        .container {
+            max-width: clamp(300px, 90%, 1200px);
+            margin: 0 auto;
+            padding: 2vh 2vw;
+            border: 3px solid #006400;
+            font-size: clamp(
+                var(--min-font),
+                calc(18px + 0.8vw), 
+                var(--max-font)
+            );
+            font-family: "Georgia", "serif";
+        }
+
+        a {
+            color: #006400;
+            text-decoration: none;
+        }
+
+    </style>
 </head>
 <body>
-    <div style="text-align: center"></div>
-    <h1>{% block content %} 
-    {% endblock %}</h1>
+    <div class="container">
+        <div style="text-align: center"></div>
+        <h1>{% block content %}
+        {% endblock %}</h1>
+        <h3>Татарча</h3>
+        <p>{% block content1 %}
+        {% endblock %}</p>
+        <br>
+        <h3>Русча</h3>
+        <p>{% block content2 %}
+        {% endblock %}</p>
+        <br>
+
+                <audio controls>{% block audio %} {% endblock %}</audio>
+
+                <h3>Скачать аудио:</h3>
+
+                <p>{% block download %} {% endblock %}</p>
+        <a href="{{url_for('main_page')}}">Артка</a>
     </div>
-    <h3>Татарча</h3>
-    <p>{% block content1 %} 
-    {% endblock %}</p>
-    <h3>Русча</h3>
-    <p>{% block content2 %} 
-    {% endblock %}</p>
-    
-            <audio controls>{% block audio %} {% endblock %}</audio>
-
-            <h3>Скачать аудио:</h3>
-
-            <p>{% block download %} {% endblock %}</p>
-    <li><a href="{{url_for('main_page')}}">Артка</a></li>
 </body>
 </html>
